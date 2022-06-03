@@ -32,6 +32,10 @@ This will start a local server that automatically compiles the code and serves i
 
 Run tests for the password validation logic in node.js.
 
+## deoloy
+This is visible on [netlify](https://password-demo.netlify.app/). Any push to the `main` branch on github will deploy a new version.
+
+
 ## lifecycle hooks
 We are using `preversion` and `postversion` hooks via `npm`.
 
