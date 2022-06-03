@@ -1,0 +1,52 @@
+.form-stuff .input-group {
+        position: relative;
+        width: 100%;
+        margin: 2rem 0;
+}
+
+.form-stuff .input-group input {
+    font-size: 1.2rem;
+    padding: 10px 10px 10px 5px;
+    display: block;
+
+    width: calc(100% - 1rem);
+
+    border: none;
+    border-bottom: 1px solid #757575;
+
+    &:focus {
+        outline: none;
+        border-bottom: 4px solid #4285f4;
+    }
+
+    /*  When input is...
+       1. NOT empty
+       2. NOT in focus
+       3. NOT valid */
+    &:invalid:not(:focus):not(:placeholder-shown) {
+        border-bottom: 4px solid red;
+    }
+}
+
+.form-stuff .input-group label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+}
+
+.form-stuff .input-group input:focus ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #4285f4;
+}
+
+.form-stuff .input-group input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #4285f4;
+}
