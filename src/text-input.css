@@ -19,13 +19,16 @@
         border-bottom: 4px solid #4285f4;
     }
 
+    /* not using this b/c we have controlled inputs doing feedback for
+    validation */
+
     /*  When input is...
        1. NOT empty
        2. NOT in focus
        3. NOT valid */
-    &:invalid:not(:focus):not(:placeholder-shown) {
+    /* &:invalid:not(:focus):not(:placeholder-shown) {
         border-bottom: 4px solid red;
-    }
+    } */
 }
 
 .form-stuff .input-group label {
