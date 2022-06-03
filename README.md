@@ -32,3 +32,10 @@ We are using `preversion` and `postversion` hooks via `npm`.
     "preversion": "npm test",
     "postversion": "git push && git push --tags",
 ```
+
+## test with cypress
+```
+% npm run cypress-test
+``
+
+This will run the `vite` local server and open cypress. This is where we can do end-to-end tests, so testing things like the DOM elements, etc, not just the logic, which is what the `npm test` script is for.
