@@ -1,5 +1,4 @@
-// import { html } from 'htm/react'
-// import * as React from 'react'
+import './text-input.css'
 
 function TextInput (props) {
     var { name, displayName } = props

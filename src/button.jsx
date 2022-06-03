@@ -1,4 +1,3 @@
-// import './App.css'
 import './button.css'
 
 export default function Button (props) {
