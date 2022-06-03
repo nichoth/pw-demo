@@ -14,10 +14,17 @@ describe('the password reset form', () => {
     // Then, we use `should` to assert
     cy.get('form button').should('be.disabled')
 
-    // cy.get('ul.form-instructions li').first().contains('🔘').should('exist')
     cy.get('ul.form-instructions li').each(el => {
         expect(el).to.contain('🔘')
-        // contains('🔘').should('exist')
     })
   })
+
+  it('shows valid passwords are valid', () => {
+    cy.get('#password').type('aaBB1!')
+
+    cy.get('ul.form-instructions li').each(el => {
+        expect(el).to.contain('✅')
+    })
+  })
+
 })
