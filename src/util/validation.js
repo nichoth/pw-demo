@@ -8,7 +8,7 @@ const digit = new RegExp("(?=.*[0-9])")
 export function passwordIsOk (pendingPwds) {
     const { password, passwordVerify } = pendingPwds
 
-    // TODO -- could use regex here, but how?
+    // could use regex here, but how?
     const hasSpecial = Array.prototype.some.call(password, l => {
         return specialChars.includes(l)
     })
