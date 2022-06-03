@@ -2,6 +2,8 @@ import { useState } from 'react'
 import TextInput from './text-input'
 import Button from './button'
 import './App.css'
+import { passwordIsOk } from './util/validation'
+const { requirements } = passwordIsOk
 
 const App = () => {
     const [isResolving, setResolving] = useState(false)
@@ -30,17 +32,7 @@ const App = () => {
         setPendingPwds(pwds)
     }
 
-    const [pwdOk, validation] = pwIsOk(pendingPwds)
-
-    const requirements = {
-        length: ['minimum length of 6 characters'],
-        upper: ['at least 1 uppercase character'],
-        lower: ['at least 1 lowercase character'],
-        digit: ['at least 1 number'],
-        eq: ['verification is equal'],
-        special: ['has at least 1 special character — ', 
-            <code key="code">{'!@#$%^&*()_-+={[}]|:;"\'<,>.'}</code>]
-    }
+    const [pwdOk, validation] = passwordIsOk(pendingPwds)
 
     return (
     <div className="the-app">
@@ -58,10 +50,14 @@ const App = () => {
                         <span>🔘</span>
                     }
                     {' ' + requirements[k][0]}
-                    {requirements[k][1] ?
-                        requirements[k][1] :
-                        null
+
+                    {k === 'special' ?
+                        (<code key="code">
+                            {'!@#$%^&*()_-+={[}]|:;"\'<,>.'}
+                        </code>) :
+                        requirements[k][1]
                     }
+
                 </li>
             })}
         </ul>
@@ -96,46 +92,46 @@ export default App;
 // (?=.*[A-Z]) -- at least one uppercase letter
 // (?=.*[0-9]) -- at least one digit
 // const specialTester = new RegExp("(?=.*[!@#$%\^\"'&*()]).")
-const specialChars = '!@#$%^&*()_-+={[}]|:;"\'<,>.'
+// const specialChars = '!@#$%^&*()_-+={[}]|:;"\'<,>.'
 
-const upperTester = new RegExp("(?=.*[A-Z])")
-const lowerTester = new RegExp("(?=.*[a-z])")
-const digit = new RegExp("(?=.*[0-9])")
+// const upperTester = new RegExp("(?=.*[A-Z])")
+// const lowerTester = new RegExp("(?=.*[a-z])")
+// const digit = new RegExp("(?=.*[0-9])")
 
-function pwIsOk (pendingPwds) {
-    const { password, passwordVerify } = pendingPwds
+// function pwIsOk (pendingPwds) {
+//     const { password, passwordVerify } = pendingPwds
 
-    // TODO -- could use regex here, but how?
-    const hasSpecial = Array.prototype.some.call(password, l => {
-        return specialChars.includes(l)
-    })
+//     // TODO -- could use regex here, but how?
+//     const hasSpecial = Array.prototype.some.call(password, l => {
+//         return specialChars.includes(l)
+//     })
 
-    const vals = {
-        length: (password.length >= 6),
-        upper: upperTester.test(password),
-        lower: lowerTester.test(password),
-        digit: digit.test(password),
-        eq: (password === passwordVerify),
-        special: (hasSpecial)
-    }
+//     const vals = {
+//         length: (password.length >= 6),
+//         upper: upperTester.test(password),
+//         lower: lowerTester.test(password),
+//         digit: digit.test(password),
+//         eq: (password === passwordVerify),
+//         special: (hasSpecial)
+//     }
 
-    // return [isValid, { validation-msgs }]
-    return [
-        Object.keys(vals).reduce((isValid, k) => {
-            return isValid && vals[k]
-        }, true),
+//     // return [isValid, { validation-msgs }]
+//     return [
+//         Object.keys(vals).reduce((isValid, k) => {
+//             return isValid && vals[k]
+//         }, true),
 
-        vals
-    ]
+//         vals
+//     ]
 
-    // if (password.length <= 6) return [false, 'blabla']
-    // console.log('is more than 6')
+//     // if (password.length <= 6) return [false, 'blabla']
+//     // console.log('is more than 6')
 
-    // if (password !== passwordVerify) return [false, 'blabla']
-    // console.log('is equal')
+//     // if (password !== passwordVerify) return [false, 'blabla']
+//     // console.log('is equal')
 
-    // if (!hasSpecial || !tester.test(password)) return [false, 'blabla']
-    // console.log('has special and regex is ok')
+//     // if (!hasSpecial || !tester.test(password)) return [false, 'blabla']
+//     // console.log('has special and regex is ok')
 
-    // return [true]
-}
+//     // return [true]
+// }
