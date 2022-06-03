@@ -2,6 +2,10 @@
 /* @import './button.css'; */
 @import './text-input.css';
 
+body {
+    background-color: pink;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
