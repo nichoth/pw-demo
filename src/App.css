@@ -3,16 +3,12 @@
 @import './text-input.css';
 
 body {
-    background-color: pink;
+  background-color: pink;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-body {
-  background-color: pink;
 }
 
 form, p, h1, h2, .form-instructions {
