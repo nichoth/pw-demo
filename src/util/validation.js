@@ -13,7 +13,7 @@ export function passwordIsOk (pendingPwds) {
         return specialChars.includes(l)
     })
 
-    const vals = {
+    const validations = {
         length: (password.length >= 6),
         upper: upperTester.test(password),
         lower: lowerTester.test(password),
@@ -24,11 +24,11 @@ export function passwordIsOk (pendingPwds) {
 
     // return [isValid, { validation-msgs }]
     return [
-        Object.keys(vals).reduce((isValid, k) => {
-            return isValid && vals[k]
+        Object.keys(validations).reduce((isValid, k) => {
+            return isValid && validations[k]
         }, true),
 
-        vals
+        validations
     ]
 }
 
