@@ -3,6 +3,6 @@ node_modules
 dist
 dist-ssr
 *.local
-public/
-!public/facicon.svg
+public/*
+!public/favicon.svg
 !public/robots.txt
