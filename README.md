@@ -1,8 +1,15 @@
 # password/form demo
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/82455868-eb09-47e6-b705-a3c26c44ef6f/deploy-status)](https://app.netlify.com/sites/password-demo/deploys)
+
 This is using [vite](https://vitejs.dev/) as a development tool. Vite compiles the react `jsx` code into valid Javascript, and runs a local development server.
 
 It also compiles the various css files into a deployable css file.
+
+## see a live version
+
+Visit [password-demo.netlify.app](https://password-demo.netlify.app/)
+
 
 ## build
 ```
