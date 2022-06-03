@@ -42,7 +42,6 @@ const App = () => {
 
         <ul className="form-instructions">
             {Object.keys(validation).map(k => {
-                console.log('validation', k, validation[k])
                 const isValid = validation[k]
                 return <li key={k}>
                     {pendingPwds.password.length ?
