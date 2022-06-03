@@ -42,7 +42,7 @@ const App = () => {
         <ul className="form-instructions">
             {Object.keys(validation).map(k => {
                 const isValid = validation[k]
-                return <li key={k}>
+                return (<li key={k}>
                     {pendingPwds.password.length ?
                         (isValid ? <span>✅ </span> : <span>🔘 </span>) :
                         <span>🔘</span>
@@ -56,7 +56,7 @@ const App = () => {
                         requirements[k][1]
                     }
 
-                </li>
+                </li>)
             })}
         </ul>
 
