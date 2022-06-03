@@ -19,7 +19,7 @@
         border-bottom: 4px solid #4285f4;
     }
 
-    /* not using this b/c we have controlled inputs doing feedback for
+    /* not using this b/c we have controlled inputs providing feedback for
     validation */
 
     /*  When input is...
