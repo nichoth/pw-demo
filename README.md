@@ -16,7 +16,7 @@ Visit [password-demo.netlify.app](https://password-demo.netlify.app/)
 % npm run build
 ```
 
-This will create a directory `/public` and write files to it that are a deployable website.
+This will create a directory `/dist` and write files to it that are a deployable website.
 
 ## develop
 ```
