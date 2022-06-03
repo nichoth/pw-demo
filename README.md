@@ -29,8 +29,14 @@ This will start a local server that automatically compiles the code and serves i
 ```
 % npm test
 ```
-
 Run tests for the password validation logic in node.js.
+
+## test with cypress
+```
+% npm run cypress-test
+```
+
+This will run the `vite` local server and open cypress. This is where we can do end-to-end tests, so testing things like the DOM elements, etc, not just the logic, which is what the `npm test` script is for.
 
 ## deoloy
 This is visible on [netlify](https://password-demo.netlify.app/). Any push to the `main` branch on github will deploy a new version.
@@ -43,10 +49,3 @@ We are using `preversion` and `postversion` hooks via `npm`.
     "preversion": "npm test",
     "postversion": "git push && git push --tags",
 ```
-
-## test with cypress
-```
-% npm run cypress-test
-```
-
-This will run the `vite` local server and open cypress. This is where we can do end-to-end tests, so testing things like the DOM elements, etc, not just the logic, which is what the `npm test` script is for.
