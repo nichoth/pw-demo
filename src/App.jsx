@@ -22,7 +22,6 @@ const App = () => {
     }
 
     function handleInput (ev) {
-        console.log('input', ev.target.name, ev.target.value)
         const { name, value } = ev.target
 
         const obj = {}
