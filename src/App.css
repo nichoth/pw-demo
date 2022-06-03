@@ -1,5 +1,5 @@
 @import './form.css';
-@import './button.css';
+/* @import './button.css'; */
 @import './text-input.css';
 
 code {
@@ -11,9 +11,17 @@ body {
   background-color: pink;
 }
 
-form, p, h1, h2 {
+form, p, h1, h2, .form-instructions {
   max-width: 40rem;
   margin: 0 auto;
+}
+
+.form-instructions {
+  list-style: none;
+}
+
+form {
+  margin-top: 2rem;
 }
 
 h1 {

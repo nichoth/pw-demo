@@ -1,3 +1,6 @@
+// import './App.css'
+import './button.css'
+
 export default function Button (props) {
     const _props = {...props}
     delete _props.isSpinning

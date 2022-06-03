@@ -29,10 +29,10 @@
 
 .form-stuff button.spinning {
     opacity: 0.6;
+}
 
-    .btn-content {
-        visibility: hidden;
-    }
+.form-stuff button.spinning .btn-content {
+    visibility: hidden;
 }
 
 .form-stuff button.spinning::after {
