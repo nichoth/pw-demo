@@ -1,4 +1,4 @@
-# password/form demo
+# password and form demo
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/82455868-eb09-47e6-b705-a3c26c44ef6f/deploy-status)](https://app.netlify.com/sites/password-demo/deploys)
 
