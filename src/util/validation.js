@@ -22,7 +22,7 @@ export function passwordIsOk (pendingPwds) {
         special: (hasSpecial)
     }
 
-    // return [isValid, { validation-msgs }]
+    // return [isValid, { isValid-by-key }]
     return [
         Object.keys(validations).reduce((isValid, k) => {
             return isValid && validations[k]
@@ -32,7 +32,7 @@ export function passwordIsOk (pendingPwds) {
     ]
 }
 
-// must have the same keys as `validation` object returned above
+// must have the same keys as `validations` object returned above
 passwordIsOk.requirements = {
     length: ['minimum length of 6 characters'],
     upper: ['at least 1 uppercase character'],
