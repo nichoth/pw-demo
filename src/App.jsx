@@ -43,6 +43,10 @@ const App = () => {
             {Object.keys(validation).map(k => {
                 const isValid = validation[k]
                 return (<li key={k}>
+                    {
+                    // only show check mark if there is something in input
+                    // if input is empty, show initial state
+                    }
                     {pendingPwds.password.length ?
                         (isValid ? <span>✅ </span> : <span>🔘 </span>) :
                         <span>🔘</span>
