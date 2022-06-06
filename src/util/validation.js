@@ -9,8 +9,8 @@ export function passwordIsOk (pendingPwds) {
     const { password, passwordVerify } = pendingPwds
 
     // could use regex here, but how?
-    const hasSpecial = Array.prototype.some.call(password, l => {
-        return specialChars.includes(l)
+    const hasSpecial = Array.prototype.some.call(password, letter => {
+        return specialChars.includes(letter)
     })
 
     const validations = {
