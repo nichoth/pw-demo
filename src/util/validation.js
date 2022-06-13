@@ -1,5 +1,3 @@
-// const [pwdOk, validation] = pwIsOk(pendingPwds)
-
 const specialChars = '!@#$%^&*()_-+={[}]|:;"\'<,>.'
 const upperTester = new RegExp("(?=.*[A-Z])")
 const lowerTester = new RegExp("(?=.*[a-z])")
@@ -10,6 +8,7 @@ export function passwordIsOk (pendingPwds) {
 
     // could use regex here, but how?
     const hasSpecial = Array.prototype.some.call(password, letter => {
+        // check that a letter from password in included in specialChars
         return specialChars.includes(letter)
     })
 

@@ -53,6 +53,10 @@ const App = () => {
                     }
                     {' ' + requirements[k][0]}
 
+                    {/*
+                        add this code tag of special chars if we are in the
+                        `special` key
+                    */}
                     {k === 'special' ?
                         (<code key="code">
                             {'!@#$%^&*()_-+={[}]|:;"\'<,>.'}
